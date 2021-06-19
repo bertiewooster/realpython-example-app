@@ -4,4 +4,6 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return "Hello this is the new version!"
+    secret_key = app.config.get("SECRET_KEY")
+    return f"The configured secret key is {secret_key}."
+    
